@@ -1,0 +1,54 @@
+<ul id="menu"><li><a class="noselected" onclick="sel(this)">Baidu.Com</a></li> <li><a>Code52.Net</a></li> <li><a>Yahoo.com</a></li> <li><a>Google.com</a></li> </ul>
+
+你可以查看我们制作的在线演示和下载本文提供的实例包。
+
+上面的CSS样式，我修改了一下。如下：
+
+<style type="text/css">
+#menu {
+font-size: 12px;
+}
+#menu li{
+	list-style-type: none;
+	float: left;
+}
+#menu li a{
+	color: #000;
+	text-decoration: none;
+	border:1px solid #dddddd;
+	display: block;
+}
+#menu li a:hover{
+	color: #000;
+	border: 1px solid #f97103;
+}
+#menu li .noselected {
+    border:1px solid #dddddd;
+    width:120px;
+    height:30px;    
+    text-align:center;
+		vertical-align:middle;
+    line-height:28px;
+    display:inline-block;
+}
+#menu li .selected {
+    border: 1px solid #f97103;
+    width:120px;
+    height:30px;    
+    text-align:center;
+		vertical-align:middle;
+    line-height:28px;
+    display:inline-block;		
+}
+</style>
+<script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+ <script>
+							function sel(thisObj) {
+								alert($(thisObj).attr("class"));
+								if ($(thisObj).attr("class") == "noselected"){
+										$(thisObj).attr("class", "selected");
+							} else {
+										$(thisObj).attr("class", "noselected");
+								}
+							}
+						</script> 
