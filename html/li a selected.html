@@ -1,54 +1,66 @@
-<ul id="menu"><li><a class="noselected" onclick="sel(this)">Baidu.Com</a></li> <li><a>Code52.Net</a></li> <li><a>Yahoo.com</a></li> <li><a>Google.com</a></li> </ul>
-
-你可以查看我们制作的在线演示和下载本文提供的实例包。
-
-上面的CSS样式，我修改了一下。如下：
-
+<div id="myservices">
+<ul>
+<li><a class="noselected" onclick="sel(this)"><input type="checkbox" value="1">Baidu.Com</a></li>
+<li><a class="noselected" onclick="sel(this)"><input type="checkbox" value="1">Code52.Net</a></li>
+<li><a class="noselected" onclick="sel(this)"><input type="checkbox" value="1">Yahoo.com</a></li>
+<li><a class="noselected" onclick="sel(this)"><input type="checkbox" value="1">Google.com</a></li>
+</ul>
+</div>
 <style type="text/css">
-#menu {
-font-size: 12px;
-}
-#menu li{
-	list-style-type: none;
-	float: left;
-}
-#menu li a{
-	color: #000;
-	text-decoration: none;
-	border:1px solid #dddddd;
-	display: block;
-}
-#menu li a:hover{
-	color: #000;
-	border: 1px solid #f97103;
-}
-#menu li .noselected {
-    border:1px solid #dddddd;
-    width:120px;
-    height:30px;    
-    text-align:center;
-		vertical-align:middle;
-    line-height:28px;
-    display:inline-block;
-}
-#menu li .selected {
+  #myservices {
+    font-size: 12px;
+  }
+  #myservices input {
+    display: none;
+  }
+  #myservices li {
+    list-style-type: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+  }
+  #myservices li a {
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #dddddd;
+    display: inline-block;
+  }
+  #myservices li a:hover {
     border: 1px solid #f97103;
-    width:120px;
-    height:30px;    
-    text-align:center;
-		vertical-align:middle;
-    line-height:28px;
-    display:inline-block;		
-}
+  }
+  #myservices li .noselected {
+    border: 1px solid #dddddd;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 28px;
+    color: #000;
+    display: inline-block;
+  }
+  #myservices li .selected {
+    border: 1px solid #f97103;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 28px;
+    color: #f97103;
+    display: inline-block;
+    background-image: url(../images/addserver.png);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+  }
 </style>
 <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
- <script>
-							function sel(thisObj) {
-								alert($(thisObj).attr("class"));
-								if ($(thisObj).attr("class") == "noselected"){
-										$(thisObj).attr("class", "selected");
-							} else {
-										$(thisObj).attr("class", "noselected");
-								}
-							}
-						</script> 
+<script>
+  function sel(thisObj) {
+    if ($(thisObj).attr("class") == "noselected") {
+      $(thisObj).attr("class", "selected triangle");
+      $(thisObj).children("input").attr("checked", "checked");
+    } else {
+      $(thisObj).attr("class", "noselected");
+      $(thisObj).children("input").removeAttr("checked");
+    }
+  }
+</script>
